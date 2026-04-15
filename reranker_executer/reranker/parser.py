@@ -1,7 +1,7 @@
 import re
 
 def parse_ranking(response, num_docs):
-    found = re.findall(r'\[(\d+)\]', response)
+    found = re.findall(r'\b\d+\b', response)
     indices = [int(i) for i in found if i.isdigit()]
 
     indices = [i for i in indices if 1 <= i <= num_docs]
